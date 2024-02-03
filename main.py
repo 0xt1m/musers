@@ -5,8 +5,12 @@
 import os
 import pwd, grp
 
-for p in pwd.getpwall():
-    print(p[0], grp.getgrgid(p[3])[0])
+
+def current_users():
+	users = []
+	for p in pwd.getpwall():
+    	users.append(p[0])
+    return users
 
 def get_users():
 	with open("users.txt", "r") as users_file:
@@ -15,4 +19,5 @@ def get_users():
 	return users
 
 
-print(get_users())
+file_users = get_users()
+current_users = current_users()
