@@ -9,8 +9,8 @@ import pwd, grp
 def current_users():
 	users = []
 	for p in pwd.getpwall():
-    	users.append(p[0])
-    return users
+		users.append(p[0])
+	return users
 
 def get_users():
 	with open("users.txt", "r") as users_file:
