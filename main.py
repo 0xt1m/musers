@@ -1,7 +1,3 @@
-# Check for users, 
-# delete, 
-# changepasswords
-
 import os
 import subprocess
 import pwd, grp
@@ -36,7 +32,8 @@ current_users = current_users()
 
 for user in current_users:
 	if user not in default_users and user not in users:
-		print("[+] Check this")
+		print("[!] Check this out")
+		print(f"[!] User: {user} is not in any of your lists")
 		rm_user = "0"
 		while rm_user == "0":
 			rm_user_input = input(f"[!] Do you want to delete user {user}? [y/n] ").lower()
